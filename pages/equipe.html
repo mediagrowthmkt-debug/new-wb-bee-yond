@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nossa Equipe — Especialistas em Estética & Longevidade | Instituto BEEyond Florianópolis</title>
+  <meta name="description" content="Conheça a equipe do Instituto BEEyond: biomédicas, médicos especialistas e profissionais dedicados a resultados naturais, seguros e personalizados em Florianópolis." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.institutobeeyond.com.br/pages/equipe.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Instituto BEEyond" />
+  <meta property="og:url" content="https://www.institutobeeyond.com.br/pages/equipe.html" />
+  <meta property="og:title" content="Nossa Equipe — Instituto BEEyond | Florianópolis" />
+  <meta property="og:description" content="Biomédicas e médicos especialistas dedicados a harmonização facial natural, estética avançada e longevidade em Florianópolis." />
+  <meta property="og:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="Instituto BEEyond — Nossa Equipe" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nossa Equipe — Instituto BEEyond" />
+  <meta name="twitter:description" content="Especialistas em estética avançada e longevidade em Florianópolis." />
+  <meta name="twitter:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="apple-touch-icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .team-profile {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 52px 0;
+      border-bottom: 1px solid rgba(34, 53, 39, 0.08);
+    }
+    .team-profile:last-child {
+      border-bottom: none;
+    }
+    .team-profile--reverse {
+      grid-template-columns: 1fr 340px;
+    }
+    .team-profile--reverse .team-profile__photo {
+      order: 2;
+    }
+    .team-profile--reverse .team-profile__info {
+      order: 1;
+    }
+    .team-profile__photo {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--dark-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .team-profile__photo-placeholder {
+      text-align: center;
+      opacity: 0.25;
+    }
+    .team-profile__role {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .team-profile__name {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--dark-green);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .team-profile__bio {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .team-profile__credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .team-profile__cred {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+    }
+    .team-profile__cred-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .team-profile__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .team-profile__tag {
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--dark-green);
+      background: rgba(34, 53, 39, 0.07);
+      border: 1px solid rgba(34, 53, 39, 0.12);
+      border-radius: 20px;
+      padding: 5px 14px;
+      letter-spacing: 0.04em;
+    }
+    .team-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .team-mini-card {
+      background: white;
+      border: 1px solid rgba(34, 53, 39, 0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 24px;
+      transition: var(--transition);
+    }
+    .team-mini-card:hover {
+      border-color: rgba(173, 129, 70, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(34, 53, 39, 0.1);
+    }
+    .team-mini-card__photo {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--dark-green);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-mini-card__name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--dark-green);
+      margin: 0 16px 4px;
+    }
+    .team-mini-card__role {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: var(--font-body);
+    }
+    @media (max-width: 1024px) {
+      .team-profile, .team-profile--reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .team-profile--reverse .team-profile__photo,
+      .team-profile--reverse .team-profile__info {
+        order: unset;
+      }
+      .team-mini-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .team-mini-grid { grid-template-columns: 1fr 1fr; }
+      .team-profile__name { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-imgs">
+          <img src="../images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" />
+        </div>
+      </a>
+      <ul class="nav__menu" id="navMenu">
+        <li class="nav__menu-logo"><img src="../images/abelha-menu.png" alt="Instituto BEEyond" height="72" /></li>
+        <li><a href="../index.html" class="nav__link">Home</a></li>
+        <li><a href="metodo.html" class="nav__link">O Método</a></li>
+        <li><a href="estetica.html" class="nav__link">Estética Avançada</a></li>
+        <li><a href="bisa.html" class="nav__link">Saúde & Longevidade</a></li>
+        <li><a href="experiencia.html" class="nav__link">Experiência</a></li>
+        <li><a href="equipe.html" class="nav__link nav__link--active">Equipe</a></li>
+        <li><a href="resultados.html" class="nav__link">Resultados</a></li>
+        <li><a href="contato.html" class="nav__link">Contato</a></li>
+              <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="btn btn--primary nav__cta" target="_blank" rel="noopener">Agendar Avaliação</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__content" data-aos="fade-up">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep">/</span>
+        <span style="color:var(--gold);">Nossa Equipe</span>
+      </div>
+      <div class="page-hero__label">Quem cuida de você</div>
+      <h1 class="page-hero__title">
+        Uma equipe inteira<br><em>dedicada a você.</em>
+      </h1>
+      <p class="page-hero__sub">
+        Profissionais altamente qualificados, com formação nacional e internacional, unidos pela mesma missão: resultados naturais, seguros e duradouros.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PERFILES PRINCIPAIS -->
+<section class="section section--light">
+  <div class="container">
+
+    <!-- Carolina Ferrão -->
+    <div class="team-profile" data-aos="fade-up">
+      <div class="team-profile__photo">
+        <div class="team-profile__photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#AD8146" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <p style="color:rgba(173,129,70,0.4);font-size:0.72rem;margin-top:8px;">[ Foto Carolina ]</p>
+        </div>
+      </div>
+      <div class="team-profile__info">
+        <div class="team-profile__role">Fundadora & Diretora Técnica</div>
+        <h2 class="team-profile__name">Carolina Ferrão</h2>
+        <p class="team-profile__bio">
+          Biomédica com especialização em Estética Avançada e Harmonização Orofacial, Carolina Ferrão é a força criativa e técnica por trás do Instituto BEEyond. Com mais de 7 anos de experiência clínica e participação em congressos internacionais de estética avançada, ela desenvolveu um método próprio que prioriza a naturalidade acima de qualquer tendência.
+        </p>
+        <p class="team-profile__bio">
+          Sua formação inclui passagens por cursos de atualização na Europa e EUA, e ela mantém rigoroso processo de atualização contínua — porque em estética avançada, a ciência evolui rápido e o Instituto acompanha esse ritmo.
+        </p>
+        <p class="team-profile__bio">
+          "Meu objetivo nunca foi transformar pessoas. É revelar a beleza que já existe — de forma natural, segura e duradoura."
+        </p>
+        <div class="team-profile__credentials">
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Biomédica — CRBM registrada</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Pós-graduação em Harmonização Orofacial</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Formação em Toxina Botulínica e Preenchimentos — EUA & Europa</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Membro de sociedades científicas de estética avançada</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> 6.000+ pacientes atendidas com protocolos individualizados</div>
+        </div>
+        <div class="team-profile__tags">
+          <span class="team-profile__tag">Harmonização Facial</span>
+          <span class="team-profile__tag">Toxina Botulínica</span>
+          <span class="team-profile__tag">Preenchimentos</span>
+          <span class="team-profile__tag">Bioestimuladores</span>
+          <span class="team-profile__tag">Fios de PDO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dra. Isabela -->
+    <div class="team-profile team-profile--reverse" data-aos="fade-up">
+      <div class="team-profile__info" style="order:1;">
+        <div class="team-profile__role">Médica — Saúde & Longevidade BISA</div>
+        <h2 class="team-profile__name">Dra. Isabela</h2>
+        <p class="team-profile__bio">
+          Médica especialista em Medicina Integrativa e Longevidade, a Dra. Isabela é responsável por todos os protocolos de saúde da BISA. Com uma visão holística do organismo, ela acredita que o estado de saúde interno é o que realmente sustenta a beleza ao longo do tempo.
+        </p>
+        <p class="team-profile__bio">
+          Especializada em modulação hormonal, nutrologia clínica e medicina anti-aging, a Dra. Isabela construiu uma abordagem que vai muito além dos exames laboratoriais: ela ouve o paciente, entende sua rotina e cria protocolos que cabem na vida real.
+        </p>
+        <p class="team-profile__bio">
+          "Quando o corpo está em equilíbrio, tudo muda — a pele, o humor, a disposição. Meu trabalho é criar esse equilíbrio de forma personalizada."
+        </p>
+        <div class="team-profile__credentials">
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Médica — CRM registrada</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Especialização em Medicina Integrativa e Funcional</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Certificação em Nutrologia Clínica</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Formação em Modulação Hormonal e Anti-aging</div>
+        </div>
+        <div class="team-profile__tags">
+          <span class="team-profile__tag">Medicina Integrativa</span>
+          <span class="team-profile__tag">Reposição Hormonal</span>
+          <span class="team-profile__tag">Longevidade</span>
+          <span class="team-profile__tag">Nutrologia</span>
+          <span class="team-profile__tag">Soroterapia</span>
+        </div>
+      </div>
+      <div class="team-profile__photo" style="order:2;">
+        <div class="team-profile__photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#AD8146" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <p style="color:rgba(173,129,70,0.4);font-size:0.72rem;margin-top:8px;">[ Foto Dra. Isabela ]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Julia Maria -->
+    <div class="team-profile" data-aos="fade-up">
+      <div class="team-profile__photo">
+        <div class="team-profile__photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#AD8146" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <p style="color:rgba(173,129,70,0.4);font-size:0.72rem;margin-top:8px;">[ Foto Julia ]</p>
+        </div>
+      </div>
+      <div class="team-profile__info">
+        <div class="team-profile__role">Biomédica — Estética Avançada</div>
+        <h2 class="team-profile__name">Julia Maria</h2>
+        <p class="team-profile__bio">
+          Biomédica especializada em Estética Avançada e procedimentos minimamente invasivos, Julia Maria se destaca pela precisão técnica e pela capacidade de criar resultados altamente naturais. Seu olhar clínico apurado e a empatia no atendimento fazem dela uma das especialistas mais solicitadas do Instituto.
+        </p>
+        <p class="team-profile__bio">
+          Com formação constante e atualização em congressos nacionais, Julia é especialista em pele — desde cuidados dérmicos até procedimentos de bioremodelação avançada.
+        </p>
+        <div class="team-profile__credentials">
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Biomédica — CRBM registrada</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Especialização em Estética Avançada e Dermato-funcional</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Certificação em Skinbooster e Bioestimuladores</div>
+        </div>
+        <div class="team-profile__tags">
+          <span class="team-profile__tag">Skinbooster</span>
+          <span class="team-profile__tag">Microagulhamento</span>
+          <span class="team-profile__tag">Bioestimuladores</span>
+          <span class="team-profile__tag">Cuidados com a Pele</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sofia Machado -->
+    <div class="team-profile team-profile--reverse" data-aos="fade-up">
+      <div class="team-profile__info" style="order:1;">
+        <div class="team-profile__role">Biomédica — Harmonização & Contorno</div>
+        <h2 class="team-profile__name">Sofia Machado</h2>
+        <p class="team-profile__bio">
+          Biomédica com expertise em harmonização facial e contorno corporal, Sofia Machado une habilidade técnica com um olhar artístico único. Especialista em perfiloplastia e rinomodelação, ela é referência no Instituto para procedimentos que redefinem traços com máxima naturalidade.
+        </p>
+        <p class="team-profile__bio">
+          Com participação em workshops internacionais e vasta experiência clínica, Sofia desenvolve planejamentos estéticos completos — sempre com foco na harmonia do rosto como um todo.
+        </p>
+        <div class="team-profile__credentials">
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Biomédica — CRBM registrada</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Especialização em Harmonização Orofacial</div>
+          <div class="team-profile__cred"><span class="team-profile__cred-icon">✦</span> Certificação internacional em Rinomodelação e Perfiloplastia</div>
+        </div>
+        <div class="team-profile__tags">
+          <span class="team-profile__tag">Rinomodelação</span>
+          <span class="team-profile__tag">Perfiloplastia</span>
+          <span class="team-profile__tag">Fios de PDO</span>
+          <span class="team-profile__tag">Lipo de Papada</span>
+        </div>
+      </div>
+      <div class="team-profile__photo" style="order:2;">
+        <div class="team-profile__photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#AD8146" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <p style="color:rgba(173,129,70,0.4);font-size:0.72rem;margin-top:8px;">[ Foto Sofia ]</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESTANTE DA EQUIPE -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section__header text-center" data-aos="fade-up">
+      <div class="section__eyebrow" style="justify-content:center;">Equipe de Suporte</div>
+      <h2 class="section__title text-offwhite">Todos os detalhes<br><em style="font-style:italic;color:var(--gold);">são de responsabilidade nossa</em></h2>
+      <p style="color:rgba(227,226,224,0.6);max-width:580px;margin:0 auto;font-size:0.95rem;line-height:1.7;">
+        Além das especialistas clínicas, nosso time de atendimento, recepção e suporte garante que cada momento da sua visita seja impecável.
+      </p>
+    </div>
+    <div class="team-mini-grid" data-aos="fade-up" data-aos-delay="80">
+      <div class="team-mini-card">
+        <div class="team-mini-card__photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(173,129,70,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="team-mini-card__name">Patrícia Lima</div>
+        <div class="team-mini-card__role">Recepcionista Sênior</div>
+      </div>
+      <div class="team-mini-card">
+        <div class="team-mini-card__photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(173,129,70,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="team-mini-card__name">Fernanda Ramos</div>
+        <div class="team-mini-card__role">Assistente Clínica</div>
+      </div>
+      <div class="team-mini-card">
+        <div class="team-mini-card__photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(173,129,70,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="team-mini-card__name">Mariana Costa</div>
+        <div class="team-mini-card__role">Coordenadora de Agendamentos</div>
+      </div>
+      <div class="team-mini-card">
+        <div class="team-mini-card__photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(173,129,70,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="team-mini-card__name">Larissa Nunes</div>
+        <div class="team-mini-card__role">Biomédica Residente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="section section--beige">
+  <div class="container">
+    <div class="equipe-values-grid" data-aos="fade-up">
+      <div style="text-align:center;padding:40px 24px;">
+        <div style="width:60px;height:60px;background:rgba(34,53,39,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark-green);margin-bottom:12px;">Atualização constante</h3>
+        <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.65;">Toda a equipe participa de congressos, workshops e treinamentos ao longo do ano. Em estética avançada, parar de aprender é retroceder.</p>
+      </div>
+      <div style="text-align:center;padding:40px 24px;">
+        <div style="width:60px;height:60px;background:rgba(34,53,39,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark-green);margin-bottom:12px;">Protocolos certificados</h3>
+        <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.65;">Todos os procedimentos seguem protocolos médicos validados pela ciência. Nenhuma modinha sem evidência, nenhum risco desnecessário.</p>
+      </div>
+      <div style="text-align:center;padding:40px 24px;">
+        <div style="width:60px;height:60px;background:rgba(34,53,39,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark-green);margin-bottom:12px;">Relação de confiança</h3>
+        <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.65;">Cada paciente tem sua especialista de referência. Você não é um número — é uma relação de longo prazo construída com transparência e respeito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="cta-final__hex-overlay"></div>
+  <div class="container">
+    <div class="cta-final__content" data-aos="fade-up">
+      <div class="cta-final__eyebrow">Conheça sua especialista</div>
+      <h2 class="cta-final__title">Agende sua avaliação gratuita<br><em>e encontre sua profissional ideal.</em></h2>
+      <p class="cta-final__sub">Durante a avaliação, você conhece a especialista que cuidará de você, entende o planejamento personalizado e tira todas as suas dúvidas — sem compromisso e sem pressão.</p>
+      <div class="cta-final__btns">
+        <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="btn btn--primary btn--lg" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a href="contato.html" class="btn btn--outline-white btn--lg">Falar com a equipe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="../images/BEEyond_logo-completa_cinza-prata.png" alt="Instituto BEEyond" height="100" />
+        </div>
+        <p class="footer__tagline">Estética avançada, medicina integrativa e longevidade em Florianópolis.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/institutobeeyond" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://wa.me/5548999999999" class="footer__social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navegação</div>
+        <ul class="footer__links">
+          <li><a href="../index.html" class="footer__link">Home</a></li>
+          <li><a href="metodo.html" class="footer__link">O Método</a></li>
+          <li><a href="estetica.html" class="footer__link">Estética Avançada</a></li>
+          <li><a href="bisa.html" class="footer__link">Saúde & Longevidade</a></li>
+          <li><a href="experiencia.html" class="footer__link">Experiência</a></li>
+          <li><a href="equipe.html" class="footer__link">Equipe</a></li>
+          <li><a href="resultados.html" class="footer__link">Resultados</a></li>
+          <li><a href="contato.html" class="footer__link">Contato</a></li>
+                <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Procedimentos</div>
+        <ul class="footer__links">
+          <li><a href="estetica.html" class="footer__link">Harmonização Facial</a></li>
+          <li><a href="estetica.html" class="footer__link">Toxina Botulínica</a></li>
+          <li><a href="estetica.html" class="footer__link">Preenchimento</a></li>
+          <li><a href="bisa.html" class="footer__link">Soroterapia</a></li>
+          <li><a href="bisa.html" class="footer__link">Longevidade</a></li>
+                <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contato</div>
+        <div class="footer__contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="footer__contact-text">Florianópolis, SC</span></div>
+        <div class="footer__contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="footer__contact-text">(48) 9 9999-9999</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">&copy; <span data-year></span> Instituto BEEyond. Todos os direitos reservados.</span>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">Política de Privacidade</a>
+        <a href="#" class="footer__bottom-link">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <span class="whatsapp-float__label">Fale conosco agora</span>
+  <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="whatsapp-float__btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741 1.029 1.025-3.956-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

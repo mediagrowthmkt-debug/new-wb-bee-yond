@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contato & Agendamento — Instituto BEEyond | Florianópolis</title>
+  <meta name="description" content="Agende sua avaliação gratuita no Instituto BEEyond em Florianópolis. Fale pelo WhatsApp, veja nossa localização, horários e formas de contato." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.institutobeeyond.com.br/pages/contato.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Instituto BEEyond" />
+  <meta property="og:url" content="https://www.institutobeeyond.com.br/pages/contato.html" />
+  <meta property="og:title" content="Contato & Agendamento — Instituto BEEyond | Florianópolis" />
+  <meta property="og:description" content="Agende sua avaliação gratuita. Fale pelo WhatsApp ou visite o Instituto BEEyond em Florianópolis, SC." />
+  <meta property="og:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="Instituto BEEyond — Contato" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contato & Agendamento — Instituto BEEyond" />
+  <meta name="twitter:description" content="Agende sua avaliação gratuita no Instituto BEEyond em Florianópolis." />
+  <meta name="twitter:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="apple-touch-icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .contact-card {
+      background: white;
+      border: 1px solid rgba(34, 53, 39, 0.07);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: var(--transition);
+    }
+    .contact-card:hover {
+      border-color: rgba(173, 129, 70, 0.25);
+      box-shadow: 0 6px 24px rgba(34, 53, 39, 0.07);
+    }
+    .contact-card__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(34, 53, 39, 0.06);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .contact-card__value {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--dark-green);
+      margin-bottom: 4px;
+    }
+    .contact-card__sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .contact-card__action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: 8px;
+      font-family: var(--font-body);
+      transition: color 0.2s;
+    }
+    .contact-card__action:hover { color: var(--dark-green); }
+    .contact-form-wrapper {
+      background: white;
+      border: 1px solid rgba(34, 53, 39, 0.07);
+      border-radius: 20px;
+      padding: 44px 40px;
+    }
+    .contact-form-wrapper h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--dark-green);
+      margin-bottom: 8px;
+    }
+    .contact-form-wrapper p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--dark-green);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid rgba(34, 53, 39, 0.12);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--dark-green);
+      background: rgba(34, 53, 39, 0.02);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(173, 129, 70, 0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .form-submit:hover {
+      background: #9a6f38;
+      transform: translateY(-1px);
+    }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .hours-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(173, 129, 70, 0.12);
+      border-radius: 12px;
+      padding: 20px 18px;
+      text-align: center;
+    }
+    .hours-card__day {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(227, 226, 224, 0.45);
+      font-family: var(--font-body);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .hours-card__time {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--off-white);
+    }
+    .hours-card--closed .hours-card__time {
+      color: rgba(227, 226, 224, 0.25);
+      font-size: 0.9rem;
+    }
+    .map-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(34, 53, 39, 0.08);
+      height: 320px;
+      background: rgba(34, 53, 39, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .hours-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .contact-form-wrapper { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hours-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-imgs">
+          <img src="../images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" />
+        </div>
+      </a>
+      <ul class="nav__menu" id="navMenu">
+        <li class="nav__menu-logo"><img src="../images/abelha-menu.png" alt="Instituto BEEyond" height="72" /></li>
+        <li><a href="../index.html" class="nav__link">Home</a></li>
+        <li><a href="metodo.html" class="nav__link">O Método</a></li>
+        <li><a href="estetica.html" class="nav__link">Estética Avançada</a></li>
+        <li><a href="bisa.html" class="nav__link">Saúde & Longevidade</a></li>
+        <li><a href="experiencia.html" class="nav__link">Experiência</a></li>
+        <li><a href="equipe.html" class="nav__link">Equipe</a></li>
+        <li><a href="resultados.html" class="nav__link">Resultados</a></li>
+        <li><a href="contato.html" class="nav__link nav__link--active">Contato</a></li>
+              <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="btn btn--primary nav__cta" target="_blank" rel="noopener">Agendar Avaliação</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__content" data-aos="fade-up">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep">/</span>
+        <span style="color:var(--gold);">Contato</span>
+      </div>
+      <div class="page-hero__label">Estamos aqui para você</div>
+      <h1 class="page-hero__title">
+        Vamos conversar sobre<br><em>o que você quer conquistar.</em>
+      </h1>
+      <p class="page-hero__sub">
+        A forma mais rápida é pelo WhatsApp. Mas se preferir, preencha o formulário e entraremos em contato em até 24 horas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO PRINCIPAL -->
+<section class="section section--light">
+  <div class="container">
+    <div class="contact-layout" data-aos="fade-up">
+
+      <!-- Informações -->
+      <div class="contact-info-block">
+
+        <div>
+          <div class="section__eyebrow" style="margin-bottom:12px;">Como nos encontrar</div>
+          <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--dark-green);margin-bottom:0;line-height:1.25;">Entre em <em style="font-style:italic;color:var(--gold);">contato</em></h2>
+          <div class="divider" style="margin:16px 0 0;"></div>
+        </div>
+
+        <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="contact-card" target="_blank" rel="noopener" style="text-decoration:none;background:var(--dark-green);border-color:rgba(173,129,70,0.2);">
+          <div class="contact-card__icon" style="background:rgba(173,129,70,0.15);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#AD8146" stroke-width="1.5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          </div>
+          <div>
+            <div class="contact-card__label" style="color:rgba(173,129,70,0.7);">Forma mais rápida</div>
+            <div class="contact-card__value" style="color:var(--off-white);">WhatsApp</div>
+            <div class="contact-card__sub" style="color:rgba(227,226,224,0.45);">(48) 9 9999-9999 · Resposta em até 1 hora</div>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--gold);margin-top:8px;font-family:var(--font-body);">Iniciar conversa →</span>
+          </div>
+        </a>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-card__label">Localização</div>
+            <div class="contact-card__value">Florianópolis, SC</div>
+            <div class="contact-card__sub">Rua [endereço completo a confirmar]<br>Bairro, Florianópolis — SC</div>
+            <a href="https://maps.google.com" class="contact-card__action" target="_blank" rel="noopener">Ver no Google Maps →</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-card__label">Instagram</div>
+            <div class="contact-card__value">@institutobeeyond</div>
+            <div class="contact-card__sub">Resultados, novidades e conteúdos sobre estética avançada</div>
+            <a href="https://instagram.com/institutobeeyond" class="contact-card__action" target="_blank" rel="noopener">Seguir no Instagram →</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-card__label">Horários de atendimento</div>
+            <div class="contact-card__value">Segunda a Sábado</div>
+            <div class="contact-card__sub">Segunda a Sexta: 8h às 20h<br>Sábado: 8h às 17h · Domingo: fechado</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulário -->
+      <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="80">
+        <h3>Solicitar avaliação</h3>
+        <p>Preencha o formulário e entraremos em contato em até 24 horas para confirmar seu agendamento.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome completo *</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(48) 9 9999-9999" required autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="interest">Área de interesse *</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Selecione o procedimento de interesse</option>
+              <optgroup label="Estética Avançada">
+                <option>Toxina Botulínica (Botox)</option>
+                <option>Preenchimento Labial</option>
+                <option>Perfiloplastia</option>
+                <option>Rinomodelação</option>
+                <option>Bioestimuladores</option>
+                <option>Skinbooster</option>
+                <option>Fios de PDO</option>
+                <option>Microagulhamento</option>
+                <option>Lipo de Papada</option>
+                <option>Harmonização Facial Completa</option>
+              </optgroup>
+              <optgroup label="Saúde & Longevidade (BISA)">
+                <option>Soroterapia</option>
+                <option>Emagrecimento</option>
+                <option>Reposição Hormonal</option>
+                <option>Longevidade</option>
+                <option>Medicina Integrativa</option>
+                <option>Check-up Preventivo</option>
+              </optgroup>
+              <option value="outros">Outros / Avaliação Geral</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem (opcional)</label>
+            <textarea id="message" name="message" placeholder="Conte-nos um pouco mais sobre o que você gostaria de tratar ou tirar dúvidas..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Solicitar avaliação gratuita</button>
+          <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:14px;">Seus dados são protegidos e não serão compartilhados com terceiros.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section__header text-center" data-aos="fade-up">
+      <div class="section__eyebrow" style="justify-content:center;">Funcionamento</div>
+      <h2 class="section__title text-offwhite">Horários de <em style="font-style:italic;color:var(--gold);">atendimento</em></h2>
+    </div>
+    <div class="hours-grid" data-aos="fade-up" data-aos-delay="80">
+      <div class="hours-card">
+        <div class="hours-card__day">Segunda</div>
+        <div class="hours-card__time">8h – 20h</div>
+      </div>
+      <div class="hours-card">
+        <div class="hours-card__day">Terça</div>
+        <div class="hours-card__time">8h – 20h</div>
+      </div>
+      <div class="hours-card">
+        <div class="hours-card__day">Quarta</div>
+        <div class="hours-card__time">8h – 20h</div>
+      </div>
+      <div class="hours-card">
+        <div class="hours-card__day">Quinta</div>
+        <div class="hours-card__time">8h – 20h</div>
+      </div>
+      <div class="hours-card">
+        <div class="hours-card__day">Sexta</div>
+        <div class="hours-card__time">8h – 20h</div>
+      </div>
+      <div class="hours-card">
+        <div class="hours-card__day">Sábado</div>
+        <div class="hours-card__time">8h – 17h</div>
+      </div>
+      <div class="hours-card hours-card--closed" style="grid-column:1/-1;max-width:220px;margin:0 auto;">
+        <div class="hours-card__day">Domingo</div>
+        <div class="hours-card__time">Fechado</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;padding:28px;background:rgba(173,129,70,0.07);border:1px solid rgba(173,129,70,0.12);border-radius:16px;max-width:560px;margin:40px auto 0;" data-aos="fade-up">
+      <p style="font-family:var(--font-display);font-size:1.1rem;color:var(--off-white);margin-bottom:8px;">Atendimento exclusivamente com hora marcada</p>
+      <p style="font-size:0.85rem;color:rgba(227,226,224,0.5);">Nenhuma fila. Seu horário é reservado com antecedência — você chega e é atendida imediatamente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="section section--light">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;" data-aos="fade-up">
+      <div class="section__header text-center" style="margin-bottom:32px;">
+        <div class="section__eyebrow" style="justify-content:center;">Localização</div>
+        <h2 class="section__title text-green">Como <em style="font-style:italic;color:var(--gold);">chegar</em></h2>
+      </div>
+      <div class="map-wrapper">
+        <!-- Substitua o src abaixo pelo embed do Google Maps com o endereço real -->
+        <div style="text-align:center;opacity:0.35;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#223527" stroke-width="1.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p style="color:var(--text-mid);font-size:0.85rem;margin-top:12px;">[ Insira aqui o embed do Google Maps ]</p>
+          <p style="color:var(--text-muted);font-size:0.78rem;margin-top:4px;">Instituto BEEyond — Florianópolis, SC</p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:20px;">
+        <a href="https://maps.google.com" class="btn btn--dark" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Abrir no Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final__hex-overlay"></div>
+  <div class="container">
+    <div class="cta-final__content" data-aos="fade-up">
+      <div class="cta-final__eyebrow">A forma mais rápida</div>
+      <h2 class="cta-final__title">Prefere falar agora?<br><em>Chame no WhatsApp.</em></h2>
+      <p class="cta-final__sub">Nossa equipe está disponível de segunda a sábado para responder suas dúvidas, mostrar nossa agenda e agendar sua avaliação gratuita.</p>
+      <div class="cta-final__btns">
+        <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="btn btn--outline-white btn--lg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741 1.029 1.025-3.956-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Falar pelo WhatsApp agora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="../images/BEEyond_logo-completa_cinza-prata.png" alt="Instituto BEEyond" height="100" />
+        </div>
+        <p class="footer__tagline">Estética avançada, medicina integrativa e longevidade em Florianópolis.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/institutobeeyond" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://wa.me/5548999999999" class="footer__social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navegação</div>
+        <ul class="footer__links">
+          <li><a href="../index.html" class="footer__link">Home</a></li>
+          <li><a href="metodo.html" class="footer__link">O Método</a></li>
+          <li><a href="estetica.html" class="footer__link">Estética Avançada</a></li>
+          <li><a href="bisa.html" class="footer__link">Saúde & Longevidade</a></li>
+          <li><a href="experiencia.html" class="footer__link">Experiência</a></li>
+          <li><a href="equipe.html" class="footer__link">Equipe</a></li>
+          <li><a href="resultados.html" class="footer__link">Resultados</a></li>
+          <li><a href="contato.html" class="footer__link">Contato</a></li>
+                <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Procedimentos</div>
+        <ul class="footer__links">
+          <li><a href="estetica.html" class="footer__link">Harmonização Facial</a></li>
+          <li><a href="estetica.html" class="footer__link">Toxina Botulínica</a></li>
+          <li><a href="estetica.html" class="footer__link">Preenchimento</a></li>
+          <li><a href="bisa.html" class="footer__link">Soroterapia</a></li>
+          <li><a href="bisa.html" class="footer__link">Longevidade</a></li>
+                <li class="nav__menu-cta"><a href="https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a></li>
+      </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contato</div>
+        <div class="footer__contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="footer__contact-text">Florianópolis, SC</span></div>
+        <div class="footer__contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="footer__contact-text">(48) 9 9999-9999</span></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">&copy; <span data-year></span> Instituto BEEyond. Todos os direitos reservados.</span>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">Política de Privacidade</a>
+        <a href="#" class="footer__bottom-link">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <span class="whatsapp-float__label">Fale conosco agora</span>
+  <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="whatsapp-float__btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741 1.029 1.025-3.956-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
