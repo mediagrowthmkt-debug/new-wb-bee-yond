@@ -203,15 +203,15 @@ ul {
 }
 
 .btn--primary {
-  background: var(--gold);
+  background: red;
   color: var(--white);
   box-shadow: var(--shadow-gold);
 }
 
 .btn--primary:hover {
-  background: #c5963e;
+  background: #cc0000;
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(173,129,70,0.38);
+  box-shadow: 0 8px 32px rgba(200,0,0,0.38);
 }
 
 .btn--outline {
