@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Performance: DNS prefetch & preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
   <!-- SEO primário -->
-  <title>Instituto BEEyond — Estética Avançada & Longevidade | Florianópolis</title>
+  <title>Instituto BEEyond  Estética Avançada & Longevidade | Florianópolis</title>
   <meta name="description" content="Instituto BEEyond em Florianópolis: harmonização facial, botox, preenchimento labial, bioestimuladores e medicina integrativa. Protocolos personalizados, resultados naturais e duradouros." />
   <meta name="keywords" content="harmonização facial Florianópolis, botox Florianópolis, preenchimento labial, bioestimuladores, medicina integrativa, Instituto BEEyond, Carolina Ferrão, estética avançada SC" />
   <meta name="robots" content="index, follow" />
@@ -15,19 +21,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Instituto BEEyond" />
   <meta property="og:url" content="https://www.institutobeeyond.com.br/" />
-  <meta property="og:title" content="Instituto BEEyond — Estética Avançada & Longevidade | Florianópolis" />
+  <meta property="og:title" content="Instituto BEEyond  Estética Avançada & Longevidade | Florianópolis" />
   <meta property="og:description" content="Harmonização facial, medicina integrativa e longevidade em Florianópolis. Protocolos personalizados com tecnologia validada internacionalmente." />
-  <meta property="og:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+  <meta property="og:image" content="https://www.institutobeeyond.com.br/images/favicon.png" />
   <meta property="og:image:width" content="500" />
   <meta property="og:image:height" content="500" />
-  <meta property="og:image:alt" content="Instituto BEEyond — Estética Avançada & Longevidade" />
+  <meta property="og:image:alt" content="Instituto BEEyond  Estética Avançada & Longevidade" />
   <meta property="og:locale" content="pt_BR" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Instituto BEEyond — Estética Avançada & Longevidade" />
+  <meta name="twitter:title" content="Instituto BEEyond  Estética Avançada & Longevidade" />
   <meta name="twitter:description" content="Harmonização facial, medicina integrativa e longevidade em Florianópolis. Resultados naturais e duradouros." />
-  <meta name="twitter:image" content="https://www.institutobeeyond.com.br/images/BEEyond_logo-completa_verde-escuro.png" />
+  <meta name="twitter:image" content="https://www.institutobeeyond.com.br/images/favicon.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -61,6 +67,9 @@
   }
   </script>
 
+  <!-- Preload critical hero poster for LCP -->
+  <link rel="preload" href="images/hero-poster.jpg" as="image" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -73,7 +82,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <div class="nav__logo-imgs">
-          <img src="images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" />
+          <img src="images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" width="96" />
         </div>
       </a>
 
@@ -82,13 +91,12 @@
           <img src="images/abelha-menu.png" alt="Instituto BEEyond" height="72" />
         </li>
         <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="pages/metodo.html" class="nav__link">O Método</a></li>
+        <li><a href="pages/metodo.html" class="nav__link">Método</a></li>
         <li><a href="pages/estetica.html" class="nav__link">Estética Avançada</a></li>
-        <li><a href="pages/bisa.html" class="nav__link">Saúde & Longevidade</a></li>
+        <li><a href="pages/bisa.html" class="nav__link">BISA</a></li>
         <li><a href="pages/experiencia.html" class="nav__link">Experiência</a></li>
         <li><a href="pages/equipe.html" class="nav__link">Equipe</a></li>
         <li><a href="pages/resultados.html" class="nav__link">Resultados</a></li>
-        <li><a href="pages/contato.html" class="nav__link">Contato</a></li>
         <li class="nav__menu-cta">
           <a href="https://wa.me/5548999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20no%20Instituto%20BEEyond." class="btn btn--primary" target="_blank" rel="noopener">Agendar Avaliação</a>
         </li>
@@ -110,13 +118,14 @@
      ============================================================ -->
 <section class="hero" id="home">
   <div class="hero__bg">
-    <!-- Replace with actual clinic video/photo -->
-    <img src="images/hero-bg.jpg" alt="Instituto BEEyond — Ambiente da Clínica" loading="eager" />
+    <video autoplay muted loop playsinline poster="images/hero-poster.jpg" preload="metadata">
+      <source src="videos/insitituto intro 1.mp4" type="video/mp4" />
+    </video>
   </div>
   <div class="hero__overlay"></div>
 
   <div class="hero__content container" data-aos="fade-up">
-    <div class="hero__label">Instituto BEEyond — Florianópolis</div>
+    <div class="hero__label">Instituto BEEyond  Florianópolis</div>
     <h1 class="hero__title">
       Estética avançada,<br>
       saúde integrativa<br>
@@ -212,11 +221,11 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 3 — O MÉTODO BEEYOND
+     SEÇÃO 3  O MÉTODO BEEYOND
      ============================================================ -->
 <section class="section section--light" id="metodo">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div class="metodo-home-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
 
       <div data-aos="fade-right">
         <div class="section__eyebrow">O Método</div>
@@ -228,7 +237,7 @@
           No Instituto BEEyond, cada tratamento começa com uma análise profunda do rosto, da saúde e do estilo de vida da paciente. Nossos protocolos unem estética avançada, medicina integrativa e tecnologia validada internacionalmente.
         </p>
         <p class="body-md" style="color:var(--text-mid);margin-bottom:40px;">
-          Não realizamos procedimentos — desenvolvemos planejamentos estratégicos personalizados. Cada detalhe é pensado para o seu rosto, para os seus objetivos, para a sua melhor versão.
+          Não realizamos procedimentos  desenvolvemos planejamentos estratégicos personalizados. Cada detalhe é pensado para o seu rosto, para os seus objetivos, para a sua melhor versão.
         </p>
         <a href="pages/metodo.html" class="btn btn--dark">
           Conheça o método completo
@@ -271,7 +280,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 4 — ESTÉTICA AVANÇADA
+     SEÇÃO 4  ESTÉTICA AVANÇADA
      ============================================================ -->
 <section class="section section--dark" id="estetica">
   <div class="container">
@@ -288,28 +297,28 @@
     <div class="procedure-grid" data-aos="fade-up" data-aos-delay="100">
 
       <div class="procedure-card">
-        <svg class="procedure-card__hex" viewBox="0 0 48 48" fill="none"><polygon points="24,2 46,14 46,34 24,46 2,34 2,14" stroke="#AD8146" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#AD8146" font-size="16" font-family="serif">✦</text></svg>
+        <img src="images/procedimentos/botox.jpg" alt="Botox  Toxina Botulínica" class="procedure-card__img" loading="lazy" />
         <div class="procedure-card__title">Botox</div>
         <div class="procedure-card__desc">Toxina botulínica para suavizar linhas de expressão com naturalidade e precisão milimétrica.</div>
         <span class="procedure-card__tag">Mais procurado</span>
       </div>
 
       <div class="procedure-card">
-        <svg class="procedure-card__hex" viewBox="0 0 48 48" fill="none"><polygon points="24,2 46,14 46,34 24,46 2,34 2,14" stroke="#AD8146" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#AD8146" font-size="16" font-family="serif">✦</text></svg>
+        <img src="images/procedimentos/preenchimento labial.jpg" alt="Preenchimento Labial" class="procedure-card__img" loading="lazy" />
         <div class="procedure-card__title">Preenchimento Labial</div>
         <div class="procedure-card__desc">Lábios mais volumosos, simétricos e naturais. Técnica especializada para resultados harmônicos.</div>
         <span class="procedure-card__tag">Destaque</span>
       </div>
 
       <div class="procedure-card">
-        <svg class="procedure-card__hex" viewBox="0 0 48 48" fill="none"><polygon points="24,2 46,14 46,34 24,46 2,34 2,14" stroke="#AD8146" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#AD8146" font-size="16" font-family="serif">✦</text></svg>
+        <img src="images/procedimentos/bioestimulador de colageno.jpg" alt="Bioestimuladores de Colágeno" class="procedure-card__img" loading="lazy" />
         <div class="procedure-card__title">Bioestimuladores</div>
         <div class="procedure-card__desc">Estímulo natural à produção de colágeno para firmeza, elasticidade e rejuvenescimento progressivo.</div>
         <span class="procedure-card__tag">Longevidade</span>
       </div>
 
       <div class="procedure-card">
-        <svg class="procedure-card__hex" viewBox="0 0 48 48" fill="none"><polygon points="24,2 46,14 46,34 24,46 2,34 2,14" stroke="#AD8146" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#AD8146" font-size="16" font-family="serif">✦</text></svg>
+        <img src="images/procedimentos/rinomodelação.jpg" alt="Harmonização Facial" class="procedure-card__img" loading="lazy" />
         <div class="procedure-card__title">Harmonização Facial</div>
         <div class="procedure-card__desc">Planejamento completo e integrado para equilibrar, rejuvenescer e realçar os traços naturais do seu rosto.</div>
         <span class="procedure-card__tag">Completo</span>
@@ -327,7 +336,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 5 — SAÚDE & LONGEVIDADE (BISA)
+     SEÇÃO 5  SAÚDE & LONGEVIDADE (BISA)
      ============================================================ -->
 <section class="section section--beige bisa-section" id="bisa">
   <div class="bisa-section__bg-text">BISA</div>
@@ -341,7 +350,7 @@
         </h2>
         <div class="divider"></div>
         <p class="body-lg" style="color:var(--text-mid);margin-bottom:20px;">
-          A <strong style="color:var(--dark-green);">BISA</strong> é a área de medicina integrativa e longevidade do Instituto BEEyond. Aqui, cuidamos do equilíbrio do organismo, da vitalidade e da qualidade de vida — porque beleza real começa pela saúde.
+          A <strong style="color:var(--dark-green);">BISA</strong> é a área de medicina integrativa e longevidade do Instituto BEEyond. Aqui, cuidamos do equilíbrio do organismo, da vitalidade e da qualidade de vida  porque beleza real começa pela saúde.
         </p>
         <p class="body-md" style="color:var(--text-mid);margin-bottom:40px;">
           A integração entre estética e saúde permite que cada paciente receba um tratamento mais completo, focado não apenas na aparência, mas no bem-estar pleno e duradouro.
@@ -407,7 +416,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 6 — EXPERIÊNCIA BEEYOND
+     SEÇÃO 6  EXPERIÊNCIA BEEYOND
      ============================================================ -->
 <section class="section section--dark" id="experiencia">
   <div class="container">
@@ -421,64 +430,11 @@
       </p>
     </div>
 
-    <div class="exp-grid" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="exp-card exp-card--wide">
-        <div class="exp-card__placeholder">
-          <svg viewBox="0 0 24 24" stroke-width="1" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Recepção Premium</div>
-          <div class="exp-card__sub">Ambiente & Arquitetura</div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-card__placeholder"></div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Maca com Massagem</div>
-          <div class="exp-card__sub">Conforto & Bem-estar</div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-card__placeholder"></div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Copa Premium</div>
-          <div class="exp-card__sub">Experiência sensorial</div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-card__placeholder"></div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Banheiro Experiência</div>
-          <div class="exp-card__sub">Conceito praia</div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-card__placeholder"></div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Jabuticabeira</div>
-          <div class="exp-card__sub">Espaço instagramável</div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-card__placeholder"></div>
-        <div class="exp-card__overlay"></div>
-        <div class="exp-card__label">
-          <div class="exp-card__title">Tecnologia de Ponta</div>
-          <div class="exp-card__sub">Equipamentos avançados</div>
-        </div>
-      </div>
-
+    <div data-aos="fade-up" data-aos-delay="100" style="max-width:960px;margin:0 auto;">
+      <video class="lazy-video" muted loop playsinline poster="images/experiencia-poster.jpg" preload="none" style="width:100%;border-radius:16px;box-shadow:0 16px 60px rgba(0,0,0,0.35);">
+        <source data-src="videos/instituto cortado 2.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
     </div>
 
     <div class="text-center mt-48" data-aos="fade-up">
@@ -491,7 +447,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 7 — EQUIPE
+     SEÇÃO 7  EQUIPE
      ============================================================ -->
 <section class="section section--light" id="equipe">
   <div class="container">
@@ -507,9 +463,7 @@
       <div class="team-card">
         <div class="team-card__photo">
           <div class="team-card__img-wrap">
-            <div class="team-card__img-placeholder">
-              <svg viewBox="0 0 24 24" stroke-width="1" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
+            <img src="images/fotocaroinaferrao.jpg" alt="Carolina Ferrão  Fundadora Instituto BEEyond" loading="lazy" width="400" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
           </div>
           <span class="team-card__badge">Fundadora</span>
         </div>
@@ -577,7 +531,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 8 — RESULTADOS & DEPOIMENTOS
+     SEÇÃO 8  RESULTADOS & DEPOIMENTOS
      ============================================================ -->
 <section class="section section--dark" id="resultados">
   <div class="container">
@@ -611,7 +565,7 @@
           <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
         </div>
-        <p class="testimonial-card__text">"O atendimento da Carolina é impecável. Ela entendeu exatamente o que eu queria — um resultado natural, que valorizasse meu rosto sem deixar marcas de procedimento. Me sinto mais eu mesma."</p>
+        <p class="testimonial-card__text">"O atendimento da Carolina é impecável. Ela entendeu exatamente o que eu queria  um resultado natural, que valorizasse meu rosto sem deixar marcas de procedimento. Me sinto mais eu mesma."</p>
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar"></div>
           <div>
@@ -647,7 +601,7 @@
           <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
         </div>
-        <p class="testimonial-card__text">"Fiz a soroterapia e o botox juntos. A equipe toda é super atenciosa e profissional. A experiência da clínica por si só já é diferenciada — parece que você foi se cuidar num spa de luxo."</p>
+        <p class="testimonial-card__text">"Fiz a soroterapia e o botox juntos. A equipe toda é super atenciosa e profissional. A experiência da clínica por si só já é diferenciada  parece que você foi se cuidar num spa de luxo."</p>
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar"></div>
           <div>
@@ -668,7 +622,7 @@
 </section>
 
 <!-- ============================================================
-     SEÇÃO 9 — CTA FINAL
+     SEÇÃO 9  CTA FINAL
      ============================================================ -->
 <section class="cta-final">
   <div class="container">
@@ -702,7 +656,7 @@
 
       <div class="footer__brand">
         <div class="footer__logo">
-          <img src="images/BEEyond_logo-completa_cinza-prata.png" alt="Instituto BEEyond" height="100" />
+          <img src="images/BEEyond_logo-completa_cinza-prata.png" alt="Instituto BEEyond" height="100" loading="lazy" />
         </div>
         <p class="footer__tagline">
           Estética avançada, medicina integrativa e longevidade em Florianópolis. Onde beleza e saúde se encontram.
@@ -714,8 +668,23 @@
           <a href="https://wa.me/5548999999999" class="footer__social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </a>
-          <a href="https://facebook.com/institutobeeyond" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Facebook">
+          <a href="https://www.facebook.com/people/Instituto-BEEyond/61576688307030/?ref=1" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@institutobeeyond" class="footer__social-btn" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_x66ZJSeXBlWb5BAWL6G5A" class="footer__social-btn" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/instituto-beeyond-7322863b3/" class="footer__social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://br.pinterest.com/ibeeyond/" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path d="M8 12a4 4 0 0 1 8 0c0 2.22-1.5 4-3 4s-1.5-1-1.5-1l-1 4"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <a href="https://www.kwai.com/@institutobeeyo" class="footer__social-btn" target="_blank" rel="noopener" aria-label="Kwai">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="M8 12l4-4 4 4M8 12l4 4 4-4"/></svg>
           </a>
         </div>
       </div>
@@ -791,6 +760,6 @@
   </a>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

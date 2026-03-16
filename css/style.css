@@ -270,6 +270,11 @@ ul {
   transition: var(--transition);
 }
 
+/* Quando o menu mobile está aberto, eleva o z-index do nav inteiro */
+.nav.nav--menu-open {
+  z-index: 9998;
+}
+
 .nav--scrolled {
   background: rgba(34,53,39,0.97);
   backdrop-filter: blur(20px);
@@ -389,19 +394,20 @@ ul {
 .nav__menu {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .nav__link {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--off-white);
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 100px;
   opacity: 0.8;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .nav__link:hover,
@@ -465,7 +471,8 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 1;
+  will-change: transform;
 }
 
 .hero__overlay {
@@ -473,9 +480,9 @@ ul {
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(34,53,39,0.85) 0%,
-    rgba(34,53,39,0.6) 50%,
-    rgba(34,53,39,0.9) 100%
+    rgba(34,53,39,0.50) 0%,
+    rgba(34,53,39,0.50) 50%,
+    rgba(34,53,39,0.50) 100%
   );
   z-index: 1;
 }
@@ -508,6 +515,7 @@ ul {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   margin-bottom: 28px;
+  text-shadow: 0 0 16px rgba(34,53,39,1), 0 0 40px rgba(34,53,39,0.9), 0 0 60px rgba(34,53,39,0.7);
 }
 
 .hero__label::before,
@@ -528,20 +536,23 @@ ul {
   line-height: 1.08;
   letter-spacing: -0.01em;
   margin-bottom: 24px;
+  text-shadow: 0 2px 20px rgba(34,53,39,1), 0 4px 50px rgba(34,53,39,1), 0 0 80px rgba(34,53,39,0.9), 0 0 120px rgba(34,53,39,0.6);
 }
 
 .hero__title em {
   font-style: italic;
   color: var(--gold);
+  text-shadow: 0 2px 20px rgba(34,53,39,1), 0 4px 50px rgba(34,53,39,1), 0 0 80px rgba(34,53,39,0.9);
 }
 
 .hero__subtitle {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 300;
-  color: rgba(227,226,224,0.82);
+  color: rgba(227,226,224,0.95);
   max-width: 620px;
   margin: 0 auto 44px;
   line-height: 1.75;
+  text-shadow: 0 1px 14px rgba(34,53,39,1), 0 2px 40px rgba(34,53,39,0.9), 0 0 60px rgba(34,53,39,0.7);
 }
 
 .hero__ctas {
@@ -821,6 +832,7 @@ ul {
   transition: var(--transition);
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
 .procedure-card::after {
@@ -882,6 +894,35 @@ ul {
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 500;
+}
+
+.procedure-card__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.procedure-card:hover .procedure-card__img {
+  transform: scale(1.04);
+  filter: brightness(0.85);
+}
+
+/* --- Proc card full image (estetica page) --- */
+.proc-card-full__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.proc-card-full:hover .proc-card-full__img {
+  transform: scale(1.03);
+  filter: brightness(0.9);
 }
 
 /* ============================================================
@@ -1874,16 +1915,19 @@ ul {
     bottom: 0;
     width: 100%;
     height: 100%;
+    height: 100dvh;
     background: #223527 !important;
     background-color: #223527 !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    z-index: 1002;
+    gap: 4px;
+    z-index: 9999;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    padding: 70px 20px 40px;
+    box-sizing: border-box;
   }
 
   .nav__menu.is-open {
@@ -1892,27 +1936,29 @@ ul {
 
   .nav__menu-logo {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    flex-shrink: 0;
   }
 
   .nav__menu-logo img {
-    height: 120px !important;
+    height: 80px !important;
     width: auto;
   }
 
   .nav__menu-cta {
     display: block;
-    margin-top: 20px;
+    margin-top: 12px;
+    flex-shrink: 0;
   }
 
   .nav__menu-cta .btn {
-    font-size: 0.85rem;
-    padding: 14px 32px;
+    font-size: 0.82rem;
+    padding: 12px 28px;
   }
 
   .nav__link {
-    font-size: 1.1rem;
-    padding: 14px 32px;
+    font-size: 0.95rem;
+    padding: 10px 28px;
     letter-spacing: 0.18em;
   }
 
@@ -1923,7 +1969,7 @@ ul {
   .nav__toggle {
     display: flex;
     position: relative;
-    z-index: 1003;
+    z-index: 10000;
   }
 
   .nav__toggle.is-active span:nth-child(1) {
@@ -2024,6 +2070,17 @@ ul {
     gap: 40px;
   }
 
+  /* HOME — Seção O Método: reduz espaço no mobile */
+  .metodo-home-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #metodo.section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
   .bisa-cards-grid,
   .metodo-cards-grid,
   .equipe-values-grid {
@@ -2057,4 +2114,58 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
+}
+
+/* Menu mobile — telas curtas (ex: iPhone SE, landscape) */
+@media (max-width: 768px) and (max-height: 700px) {
+  .nav__menu {
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
+
+  .nav__menu-logo img {
+    height: 56px !important;
+  }
+
+  .nav__link {
+    font-size: 0.85rem;
+    padding: 8px 24px;
+  }
+
+  .nav__menu-logo {
+    margin-bottom: 0;
+  }
+
+  .nav__menu-cta {
+    margin-top: 8px;
+  }
+}
+
+/* ============================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================ */
+
+/* content-visibility for below-fold sections — skips rendering until near viewport */
+#metodo,
+#estetica,
+#bisa,
+#experiencia,
+#equipe,
+#resultados,
+.cta-final,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Optimize image rendering — removed content-visibility:auto from img
+   (causes blank/invisible images on mobile due to containment) */
+
+/* Reduce paint for fixed/absolute elements */
+.nav {
+  will-change: transform;
+}
+
+.whatsapp-float__btn {
+  will-change: transform;
 }

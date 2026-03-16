@@ -29,6 +29,7 @@
       const isOpening = !navMenu.classList.contains('is-open');
       navToggle.classList.toggle('is-active');
       navMenu.classList.toggle('is-open');
+      if (nav) nav.classList.toggle('nav--menu-open');
       if (isOpening) {
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
@@ -45,6 +46,7 @@
       link.addEventListener('click', () => {
         navToggle.classList.remove('is-active');
         navMenu.classList.remove('is-open');
+        if (nav) nav.classList.remove('nav--menu-open');
         document.body.style.overflow = '';
         document.body.style.position = '';
         document.body.style.width = '';
@@ -87,6 +89,16 @@
     });
 
     elements.forEach(el => observer.observe(el));
+
+    /* Safety fallback: ensure all AOS elements become visible after 3s
+       in case IntersectionObserver fails (e.g. content-visibility issues on mobile) */
+    setTimeout(() => {
+      elements.forEach(el => {
+        if (!el.classList.contains('aos-animate')) {
+          el.classList.add('aos-animate');
+        }
+      });
+    }, 3000);
   }
   initAOS();
 
@@ -258,14 +270,50 @@
   function initParallax() {
     const heroBg = document.querySelector('.hero__bg img, .hero__bg video');
     if (!heroBg) return;
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight * 1.2) {
-        heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (scrollY < window.innerHeight * 1.2) {
+            heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }, { passive: true });
   }
   initParallax();
+
+  /* ---- LAZY VIDEO LOADING ---- */
+  function initLazyVideos() {
+    const lazyVideos = document.querySelectorAll('.lazy-video');
+    if (!lazyVideos.length) return;
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          const sources = video.querySelectorAll('source[data-src]');
+          sources.forEach(source => {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+          });
+          video.load();
+          video.play().catch(() => {});
+          video.classList.remove('lazy-video');
+          videoObserver.unobserve(video);
+        }
+      });
+    }, {
+      rootMargin: '200px 0px',
+      threshold: 0.01
+    });
+
+    lazyVideos.forEach(video => videoObserver.observe(video));
+  }
+  initLazyVideos();
 
   /* ---- YEAR auto-update in footer ---- */
   const yearEl = document.querySelector('[data-year]');
