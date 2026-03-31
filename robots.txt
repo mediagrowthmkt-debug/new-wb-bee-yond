@@ -1,0 +1,12 @@
+# Instituto BEEyond - robots.txt
+# https://www.institutobeeyond.com.br/
+
+User-agent: *
+Allow: /
+
+# Bloquear acesso a arquivos desnecessários
+Disallow: /www.institutocarolinaferrao.com.br/
+Disallow: /*.txt$
+
+# Sitemap
+Sitemap: https://www.institutobeeyond.com.br/sitemap.xml
