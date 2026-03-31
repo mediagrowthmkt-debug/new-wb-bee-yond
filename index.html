@@ -158,7 +158,7 @@
   </script>
 
   <!-- Preload critical hero poster for LCP -->
-  <link rel="preload" href="images/hero-poster.jpg" as="image" />
+  <link rel="preload" href="images/hero-poster.jpg" as="image" fetchpriority="high" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -172,7 +172,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <div class="nav__logo-imgs">
-          <img src="images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" width="96" />
+          <img src="images/logo-header.png" class="nav__logo-img--header" alt="Instituto BEEyond" height="96" width="96" loading="eager" fetchpriority="high" decoding="async" />
         </div>
       </a>
 
@@ -208,7 +208,7 @@
      ============================================================ -->
 <section class="hero" id="home">
   <div class="hero__bg">
-    <video autoplay muted loop playsinline poster="images/hero-poster.jpg" preload="metadata">
+    <video autoplay muted loop playsinline poster="images/hero-poster.jpg" preload="none" fetchpriority="high">
       <source src="videos/insitituto intro 1.mp4" type="video/mp4" />
     </video>
   </div>
@@ -387,28 +387,28 @@
     <div class="procedure-grid" data-aos="fade-up" data-aos-delay="100">
 
       <div class="procedure-card">
-        <img src="images/procedimentos/botox.jpg" alt="Botox  Toxina Botulínica" class="procedure-card__img" loading="lazy" />
+        <img src="images/procedimentos/botox.jpg" alt="Botox  Toxina Botulínica" class="procedure-card__img" loading="lazy" decoding="async" />
         <div class="procedure-card__title">Botox</div>
         <div class="procedure-card__desc">Toxina botulínica para suavizar linhas de expressão com naturalidade e precisão milimétrica.</div>
         <span class="procedure-card__tag">Mais procurado</span>
       </div>
 
       <div class="procedure-card">
-        <img src="images/procedimentos/preenchimento labial.jpg" alt="Preenchimento Labial" class="procedure-card__img" loading="lazy" />
+        <img src="images/procedimentos/preenchimento labial.jpg" alt="Preenchimento Labial" class="procedure-card__img" loading="lazy" decoding="async" />
         <div class="procedure-card__title">Preenchimento Labial</div>
         <div class="procedure-card__desc">Lábios mais volumosos, simétricos e naturais. Técnica especializada para resultados harmônicos.</div>
         <span class="procedure-card__tag">Destaque</span>
       </div>
 
       <div class="procedure-card">
-        <img src="images/procedimentos/bioestimulador de colageno.jpg" alt="Bioestimuladores de Colágeno" class="procedure-card__img" loading="lazy" />
+        <img src="images/procedimentos/bioestimulador de colageno.jpg" alt="Bioestimuladores de Colágeno" class="procedure-card__img" loading="lazy" decoding="async" />
         <div class="procedure-card__title">Bioestimuladores</div>
         <div class="procedure-card__desc">Estímulo natural à produção de colágeno para firmeza, elasticidade e rejuvenescimento progressivo.</div>
         <span class="procedure-card__tag">Longevidade</span>
       </div>
 
       <div class="procedure-card">
-        <img src="images/procedimentos/rinomodelação.jpg" alt="Harmonização Facial" class="procedure-card__img" loading="lazy" />
+        <img src="images/procedimentos/rinomodelação.jpg" alt="Harmonização Facial" class="procedure-card__img" loading="lazy" decoding="async" />
         <div class="procedure-card__title">Harmonização Facial</div>
         <div class="procedure-card__desc">Planejamento completo e integrado para equilibrar, rejuvenescer e realçar os traços naturais do seu rosto.</div>
         <span class="procedure-card__tag">Completo</span>
@@ -553,7 +553,7 @@
       <div class="team-card">
         <div class="team-card__photo">
           <div class="team-card__img-wrap">
-            <img src="images/fotocaroinaferrao.jpg" alt="Carolina Ferrão - Fundadora Instituto BEEyond" loading="lazy" width="400" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+            <img src="images/fotocaroinaferrao.jpg" alt="Carolina Ferrão - Fundadora Instituto BEEyond" loading="lazy" decoding="async" width="400" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
           </div>
           <span class="team-card__badge">Fundadora</span>
         </div>
@@ -564,7 +564,7 @@
       <div class="team-card">
         <div class="team-card__photo">
           <div class="team-card__img-wrap">
-            <img src="images/foto equipe/Caroline Dresch.jpeg" alt="Caroline Dresch - Cirurgiã Dentista Instituto BEEyond" loading="lazy" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+            <img src="images/foto equipe/Caroline Dresch.jpeg" alt="Caroline Dresch - Cirurgiã Dentista Instituto BEEyond" loading="lazy" decoding="async" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
           </div>
         </div>
         <div class="team-card__name">Caroline Dresch</div>
@@ -574,7 +574,7 @@
       <div class="team-card">
         <div class="team-card__photo">
           <div class="team-card__img-wrap">
-            <img src="images/foto equipe/Julia Maria da Silva.png" alt="Julia Maria da Silva - Biomedicina Instituto BEEyond" loading="lazy" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+            <img src="images/foto equipe/Julia Maria da Silva.jpg" alt="Julia Maria da Silva - Biomedicina Instituto BEEyond" loading="lazy" decoding="async" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
           </div>
         </div>
         <div class="team-card__name">Julia Maria da Silva</div>
@@ -584,7 +584,7 @@
       <div class="team-card">
         <div class="team-card__photo">
           <div class="team-card__img-wrap">
-            <img src="images/foto equipe/laura.jpeg" alt="Laura Quint - Cosmetóloga Instituto BEEyond" loading="lazy" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
+            <img src="images/foto equipe/laura.jpeg" alt="Laura Quint - Cosmetóloga Instituto BEEyond" loading="lazy" decoding="async" width="400" height="533" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
           </div>
         </div>
         <div class="team-card__name">Laura Quint</div>
