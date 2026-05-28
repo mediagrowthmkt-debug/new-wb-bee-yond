@@ -2,3 +2,6 @@
 *.DS_Store
 www.institutocarolinaferrao.com.br/
 logos/
+.claude/
+node_modules/
+*.log

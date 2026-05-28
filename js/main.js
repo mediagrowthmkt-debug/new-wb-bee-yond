@@ -57,10 +57,11 @@
   // Active link highlight
   function setActiveNavLink() {
     const links = document.querySelectorAll('.nav__link');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = (window.location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
     links.forEach(link => {
       const href = link.getAttribute('href');
-      if (href && (href === currentPath || href.endsWith(currentPath))) {
+      const normalizedHref = href ? href.split('/').pop().replace(/\.html$/, '') : '';
+      if (normalizedHref && normalizedHref === currentPath) {
         link.classList.add('nav__link--active');
       }
     });
