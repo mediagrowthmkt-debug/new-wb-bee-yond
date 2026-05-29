@@ -48,7 +48,7 @@
 
 | # | Local no site | O que precisa |
 |---|---|---|
-| 1 | Página inteira | Nenhuma foto real na página. Precisa de pelo menos 1-2 fotos contextuais (atendimento BISA, consulta médica, espaço) |
+| 1 | Página inteira | Nenhuma foto real na página. Precisa de pelo menos 1-2 fotos contextuais (atendimento BISA, terapias nutricionais injetáveis, consulta médica, espaço) |
 
 ---
 

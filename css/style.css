@@ -1397,9 +1397,11 @@ ul {
 
 .footer__link {
   font-size: 0.85rem;
+  line-height: 1.35;
   color: rgba(227,226,224,0.55);
   transition: var(--transition);
   font-weight: 300;
+  display: inline-block;
 }
 
 .footer__link:hover {
