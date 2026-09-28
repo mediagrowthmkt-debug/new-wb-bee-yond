@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Avaliação BEEyond</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: uma coluna estreita, cartão único sobre o cinza da marca; perguntas empilhadas, envio ao final. Paleta e tipografia do Manual da Marca BEEyond */
+:root{
+  --bg:#E3E2E0;
+  --surface:#F7F6F4;
+  --ink:#223527;
+  --muted:#5E6B61;
+  --line:#D6D2CC;
+  --accent:#AD8146;
+  --accent-soft:#F1E1D4;
+  --chosen:#223527;
+  --chosen-ink:#F7F6F4;
+  --display:"Chiffon", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body:"Montserrat", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16211A; --surface:#223527; --ink:#EFEDEA; --muted:#AEB8B0; --line:#34493B;
+    --accent:#CF9773; --accent-soft:#2C3F31; --chosen:#E6C4AB; --chosen-ink:#223527; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16211A; --surface:#223527; --ink:#EFEDEA; --muted:#AEB8B0; --line:#34493B;
+  --accent:#CF9773; --accent-soft:#2C3F31; --chosen:#E6C4AB; --chosen-ink:#223527; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+header{text-align:center;display:flex;flex-direction:column;gap:10px;padding-block:8px}
+.brand{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--accent);font-weight:500;padding-left:.42em}
+.sub{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);font-weight:300}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(30px,7vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+.intro{color:var(--muted);font-weight:300;font-size:15px;margin:0 auto;max-width:44ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column;gap:30px}
+.q{display:flex;flex-direction:column;gap:12px;border:0;margin:0;padding:0;min-width:0}
+.q legend,.q label.t{font-weight:500;font-size:15px;line-height:1.4;padding:0;margin-bottom:12px}
+.q .num{font-family:var(--display);font-style:italic;color:var(--accent);font-size:21px;margin-right:6px;font-weight:400}
+.scale{display:grid;gap:5px}
+.scale.nps{grid-template-columns:repeat(11,1fr)}
+.scale.five{grid-template-columns:repeat(5,1fr);gap:8px}
+.scale button{font:inherit;font-weight:600;font-variant-numeric:tabular-nums;height:46px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;padding:0;transition:background .15s,color .15s,border-color .15s}
+.scale button:hover{border-color:var(--accent)}
+.scale button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.scale button[aria-pressed="true"]{background:var(--chosen);color:var(--chosen-ink);border-color:var(--chosen)}
+.scale.nps button{border-color:transparent;transition:opacity .15s,transform .15s,box-shadow .15s}
+.scale.nps button:hover{transform:translateY(-1px)}
+.scale.nps.has button[aria-pressed="false"]{opacity:.35}
+.scale.nps button[aria-pressed="true"]{transform:scale(1.08);box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
+.ends{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+.legend5{font-size:13px;font-weight:300;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 12px;margin:0}
+textarea,input[type="text"]{font:inherit;width:100%;border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--bg);color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+textarea:focus-visible,input[type="text"]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.opt{font-weight:400;color:var(--muted);font-size:14px}
+.send{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:16px;border-radius:10px;background:var(--chosen);color:var(--chosen-ink);border:0}
+.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{font-size:14px;color:var(--muted);text-align:center;margin:0}
+.thanks{text-align:center;display:flex;flex-direction:column;gap:12px;padding-block:12px}
+.thanks h2{font-family:var(--display);font-weight:300;font-size:30px;margin:0}
+.thanks p{margin:0;color:var(--muted)}
+.link{background:none;border:0;color:var(--accent);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:4px}
+footer{text-align:center;font-size:13px;color:var(--muted)}
+@media (max-width:420px){
+  .scale.nps{grid-template-columns:repeat(6,1fr);gap:6px}
+  .card{padding:22px 16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="brand">Instituto BEEyond</span>
+    <span class="sub">Harmonização Facial</span>
+    <h1>Sua experiência conosco</h1>
+    <p class="intro">Agradecemos por nos confiar o cuidado com você. Sua percepção é essencial para mantermos o padrão de excelência que buscamos em cada atendimento. Leva menos de um minuto.</p>
+  </header>
+
+  <main class="card" id="form">
+    <fieldset class="q">
+      <legend><span class="num">1.</span>Em uma escala de 0 a 10, qual a probabilidade de você recomendar o Instituto BEEyond a uma amiga ou familiar?</legend>
+      <div class="scale nps" data-key="nps" role="group" aria-label="Nota de 0 a 10"></div>
+      <div class="ends"><span>0 = nada provável</span><span>10 = extremamente provável</span></div>
+    </fieldset>
+
+    <p class="legend5">Nas perguntas 2 a 4: 1 = muito insatisfeita, 2 = insatisfeita, 3 = neutra, 4 = satisfeita, 5 = muito satisfeita</p>
+
+    <fieldset class="q">
+      <legend><span class="num">2.</span>Como você avalia a atenção da consultora em compreender seus objetivos e orientar suas escolhas?</legend>
+      <div class="scale five" data-key="consultora" role="group" aria-label="Nota de 1 a 5"></div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend><span class="num">3.</span>Como você avalia a segurança transmitida pela doutora na condução do seu procedimento?</legend>
+      <div class="scale five" data-key="doutora" role="group" aria-label="Nota de 1 a 5"></div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend><span class="num">4.</span>Como você avalia o acolhimento e o ambiente da clínica durante a sua experiência?</legend>
+      <div class="scale five" data-key="ambiente" role="group" aria-label="Nota de 1 a 5"></div>
+    </fieldset>
+
+    <div class="q">
+      <label class="t" for="sugestao"><span class="num">5.</span>O que poderíamos fazer para tornar sua experiência ainda melhor? <span class="opt">(opcional)</span></label>
+      <textarea id="sugestao" placeholder="Escreva aqui, se desejar"></textarea>
+    </div>
+
+    <div class="send">
+      <a id="enviar" class="btn" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar avaliação pelo WhatsApp</a>
+      <p class="hint" id="hint">Responda às perguntas 1 a 4 para enviar.</p>
+    </div>
+  </main>
+
+  <section class="card thanks" id="obrigada" hidden>
+    <h2>Muito obrigada</h2>
+    <p>Sua avaliação foi preparada no WhatsApp. Para concluir, basta tocar em enviar na conversa que se abriu.</p>
+    <p>Cada avaliação é lida com atenção pela nossa equipe.</p>
+    <button class="link" id="voltar" type="button">Voltar à pesquisa</button>
+  </section>
+
+  <footer>Instituto BEEyond · Florianópolis</footer>
+</div>
+
+<script>
+(function(){
+  var WHATS = "554888183235";
+  var answers = {nps:null, consultora:null, doutora:null, ambiente:null};
+  var NPS_COLORS = ["#b8322a","#c63b2a","#d2452b","#dc532c","#e4622e","#ea7430","#ee8833","#f0b43a","#e6c83f","#7fb84e","#3f9d4a"];
+
+  document.querySelectorAll(".scale").forEach(function(g){
+    var key = g.dataset.key;
+    var from = key === "nps" ? 0 : 1, to = key === "nps" ? 10 : 5;
+    for (var i = from; i <= to; i++){
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = i; b.dataset.v = i;
+      b.id = key + "-" + i;
+      b.setAttribute("aria-pressed","false");
+      if (key === "nps"){
+        b.style.background = NPS_COLORS[i];
+        b.style.color = (i === 7 || i === 8) ? "#2b2230" : "#ffffff";
+      }
+      b.addEventListener("click", function(e){
+        var v = Number(e.currentTarget.dataset.v);
+        answers[key] = v;
+        g.classList.add("has");
+        g.querySelectorAll("button").forEach(function(x){
+          x.setAttribute("aria-pressed", Number(x.dataset.v) === v ? "true" : "false");
+        });
+        update();
+      });
+      g.appendChild(b);
+    }
+  });
+
+  var link = document.getElementById("enviar");
+  var hint = document.getElementById("hint");
+  var txt = document.getElementById("sugestao");
+  txt.addEventListener("input", update);
+
+  function complete(){
+    return Object.keys(answers).every(function(k){ return answers[k] !== null; });
+  }
+
+  function update(){
+    if (!complete()){
+      link.setAttribute("aria-disabled","true");
+      link.href = "#";
+      hint.hidden = false;
+      return;
+    }
+    var s = txt.value.trim();
+    var msg =
+      "Avaliação de experiência | Instituto BEEyond\n\n" +
+      "Recomendação (0 a 10): " + answers.nps + "\n" +
+      "Consultora (1 a 5): " + answers.consultora + "\n" +
+      "Doutora (1 a 5): " + answers.doutora + "\n" +
+      "Acolhimento e ambiente (1 a 5): " + answers.ambiente + "\n" +
+      "Sugestão: " + (s || "sem comentários");
+    link.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg);
+    link.setAttribute("aria-disabled","false");
+    hint.hidden = true;
+  }
+
+  link.addEventListener("click", function(e){
+    if (!complete()){ e.preventDefault(); return; }
+    setTimeout(function(){
+      document.getElementById("form").hidden = true;
+      document.getElementById("obrigada").hidden = false;
+      window.scrollTo(0,0);
+    }, 300);
+  });
+
+  document.getElementById("voltar").addEventListener("click", function(){
+    document.getElementById("obrigada").hidden = true;
+    document.getElementById("form").hidden = false;
+  });
+})();
+</script>
+
+</body>
+</html>
